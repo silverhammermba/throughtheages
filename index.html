@@ -11,6 +11,7 @@
 	<body>
 <h1 id="cheat-sheet-for-through-the-ages">Cheat Sheet for Through the Ages</h1>
 
+<section class="exp">
 <p>There are three variants of Through the Ages: simple, advanced, and full.
 The rules for the variants are marked as such:</p>
 
@@ -21,26 +22,24 @@ The rules for the variants are marked as such:</p>
 	<li class="rule advanced">This rule applies to both the advanced and full games</li>
 	<li class="rule full">This rule applies only to the full game</li>
 </ul>
-
-<p>Throughout the game, remember to look for adjustments to your civilization’s
-culture and science rating after every action.</p>
+</section>
 
 <h2 id="set-up">Set Up</h2>
 
-<h3 id="remove-cards">Remove Cards</h3>
+<h3 id="prepare-decks">Prepare Decks</h3>
 
-<p class="rule simple">Remove <span class="card">Development of Politics</span> from <span class="deck">Military Deck A</span>. Set aside
+<p class="rule simple">Set aside <span class="card">Development of Politics</span> from <span class="deck">Military Deck A</span>. Set aside
 <span class="deck">Civil Decks II</span> and <span class="deck">III</span> and <span class="deck">Military Decks I, II</span>, and <span class="deck">III</span>.</p>
 
-<p class="rule advanced-only">Remove the 4 <span class="card">war</span> cards from <span class="deck">Military Deck II</span>. Randomly
+<p class="rule advanced-only">Set aside the 4 <span class="card">war</span> cards from <span class="deck">Military Deck II</span>. Randomly
 select 4 <span class="card">event</span> cards from <span class="deck">Military Deck III</span> and place them near the board.
 Set aside the rest of <span class="deck">Military Deck III</span> and <span class="deck">Civil Deck III</span>.</p>
 
 <p class="rule advanced">Randomly select 2+(# players) cards from <span class="deck">Military Deck A</span> and set
-aside the rest. For a 2 player game, remove the <span class="card">pact</span> cards from the
+aside the rest. For a 2 player game, set aside the <span class="card">pact</span> cards from the
 <span class="deck">Military Decks</span>.</p>
 
-<p>Remove any cards from the <span class="deck">Civil Decks</span> that do not match the number of players
+<p>Set aside any cards from the <span class="deck">Civil Decks</span> that do not match the number of players
 (3+, 4+).</p>
 
 <h3 id="set-up-the-board">Set up the board</h3>
@@ -56,7 +55,7 @@ the board</li>
 
 <p>Fill production/population banks, worker pool, and initial buildings/units (update science
 rating and strength accordingly). Take civil and military tokens according to
-your government.</p>
+your <span class="card">government</span>.</p>
 
 <h2 id="first-turn">First turn</h2>
 
@@ -79,6 +78,9 @@ your government.</p>
   <li><a href="#maintenance">Maintenance</a></li>
 </ol>
 
+<p>Throughout the game, remember to look for adjustments to your civilization’s
+culture and science rating after every action.</p>
+
 <h3 id="card-row">Card Row</h3>
 
 <ol>
@@ -90,10 +92,10 @@ your government.</p>
 	  obsoletes cards from <span class="deck">Deck A</span>). Replace the
 	  <span class="deck">Civil</span> and <span class="deck">Military
 	  Decks</span> with the ones from the next age. All players:
-    <ol>
+    <ul>
 		<li>Discard obsolete <span class="card">leaders</span>, <span class="card">pacts</span>, unfinished <span class="card">wonders</span>, and cards in hand</li>
-	  <li class="rule full">Remove 2 unused yellow tokens from your population bank</li>
-    </ol>
+	  <li class="rule full">Set aside 2 unused yellow tokens from your population bank</li>
+    </ul>
   </li>
 </ol>
 
@@ -104,10 +106,10 @@ are set aside and replaced with <span class="deck">Civil Deck I</span>.</p>
 <section class="rule full">
 <h3 id="war">War</h3>
 
-<p>Resolve a previously declared <span class="card">war</span> as a normal aggression except:</p>
+<p>Resolve a previously declared <span class="card">war</span> as a normal <a href="#aggression">aggression</a> except:</p>
 
 <ul>
-  <li>You may not use defensive bonuses</li>
+<li>You may not use <span class="card">defensive bonuses</span></li>
   <li>The defender can claim the reward if they win</li>
 </ul>
 </section>
@@ -125,7 +127,7 @@ are set aside and replaced with <span class="deck">Civil Deck I</span>.</p>
 <p>You may do <em>one</em> of the following:</p>
 
 <ul>
-  <li>Play an event onto the <span class="event">future events</span> deck, score culture points equal to its
+	<li>Play an <span class="card">event</span> onto the <span class="event">future events</span> deck, score culture points equal to its
 age, and reveal the top <span class="event">current event</span>. If that is the last <span class="event">current event</span>,
 shuffle <span class="event">future events</span> and move them to <span class="event">current events</span>, ordering them by
 age
@@ -134,11 +136,11 @@ age
 military units and playing <span class="card">colonization bonuses</span>. You do not have to
 specify how you will pay unless you win. You must sacrifice at least one
 unit, your total payment may exceed your bid</li>
-      <li>When breaking ties for events (e.g. “the strongest”, “the most”), the tie is
+	  <li>When breaking ties for <span class="card">events</span> (e.g. “the strongest”, “the most”), the tie is
 broken in favor of the player that will go first</li>
     </ul>
   </li>
-  <li>Play <span class="card">aggression</span>/<span class="card">war</span> against a player. <span class="card">War</span> is resolved <a href="#war">next round</a>
+  <li id="aggression">Play <span class="card">aggression</span> against a player.
     <ol>
       <li>Offense may sacrifice units to double their strength</li>
       <li>Defense may then sacrifice units and/or play defensive bonuses</li>
@@ -146,6 +148,7 @@ broken in favor of the player that will go first</li>
 defense (not more than the defense has)</li>
     </ol>
   </li>
+  <li class="full">Declare <span class="card">war</span> against a player (to be resolved <a href="#war">next round</a>)
   <li>Propose a (specific) pact to a (specific) player (replacing any existing pact
 you have)</li>
   <li>Dissolve a previous pact</li>
@@ -172,7 +175,7 @@ construction at a time)</li>
   <li>Increase population</li>
   <li>Build/upgrade/destroy buildings
     <ul>
-      <li>Mind your government’s urban building limit</li>
+      <li>Mind your urban building limit</li>
     </ul>
   </li>
   <li>Construct a stage of your <span class="card">wonder</span></li>
@@ -241,7 +244,7 @@ number of turns, the game ends.</p>
 <ul>
   <li class="rule simple">Each civilization scores bonus culture points:
     <ul>
-	  <li>2 points for each Level 1 <span class="card">technology</span> (including governments)</li>
+	  <li>2 points for each Level 1 <span class="card">technology</span></li>
       <li>2 points for each strength</li>
       <li>2 points for each happy face</li>
       <li>1 culture point for each food and resource produced per round</li>
@@ -254,5 +257,6 @@ events</span> take effect</li>
 </ul>
 
 <p>The player with the most culture points wins.</p>
+<script src="script.js"></script>
 	</body>
 </html>
