@@ -1,5 +1,5 @@
 DEST=/srv/http/TtA/
-SRC=index.html style.css script.js
+SRC=index.html
 
 default: $(addprefix $(DEST), $(SRC))
 

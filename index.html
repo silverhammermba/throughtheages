@@ -6,7 +6,86 @@
 
 		<title>Through the Ages</title>
 
-		<link rel="stylesheet" href="style.css">
+		<style>
+body {
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
+h3 {
+	margin-top: 5px;
+}
+
+/* script buttons start hidden */
+#buttons {
+	display: none;
+}
+
+/* span styles */
+.event {
+	text-transform: capitalize;
+	font-variant: small-caps;
+}
+
+.card {
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.deck {
+	font-style: italic;
+}
+
+.bad {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: darkred;
+	text-shadow: 1px 1px 2px gray;
+}
+
+/* styles for rule blocks */
+.rule {
+	margin: 2px;
+	padding: 0 4px;
+	border-radius: 5px;
+	border-width: 2px;
+	border-style: solid;
+}
+.rule:before, .rule h3:before {
+	padding: 0 5px;
+}
+section.rule:before {
+	content: none;
+}
+
+.full {
+	border-color: red;
+}
+.full:before, .full h3:before {
+	content: "╬";
+}
+
+.advanced {
+	border: 1px dotted purple;
+}
+.advanced:before, .advanced h3:before {
+	content: "╪";
+}
+
+.advanced-only {
+	border-color: blue;
+}
+.advanced-only:before {
+	content: "┼";
+}
+
+.simple {
+	border-color: green;
+}
+.simple:before, .simple h3:before {
+	content: "┴";
+}
+		</style>
 	</head>
 	<body>
 <h1 id="cheat-sheet-for-through-the-ages">Cheat Sheet for Through the Ages</h1>
@@ -22,6 +101,13 @@ The rules for the variants are marked as such:</p>
 	<li class="rule advanced">This rule applies to both the advanced and full games</li>
 	<li class="rule full">This rule applies only to the full game</li>
 </ul>
+
+<div id="buttons">
+	<p>Or just show rules for a specific variant:</p>
+<button type="button" onclick="show_simple();">Simple Game</button>
+<button type="button" onclick="show_advanced();">Advanced Game</button>
+<button type="button" onclick="show_full();">Full Game</button>
+</div>
 </section>
 
 <h2 id="set-up">Set Up</h2>
@@ -137,7 +223,7 @@ military units and playing <span class="card">colonization bonuses</span>. You d
 specify how you will pay unless you win. You must sacrifice at least one
 unit, your total payment may exceed your bid</li>
 	  <li>When breaking ties for <span class="card">events</span> (e.g. “the strongest”, “the most”), the tie is
-broken in favor of the player that will go first</li>
+broken in favor of the player who will go first</li>
     </ul>
   </li>
   <li id="aggression">Play <span class="card">aggression</span> against a player.
@@ -257,6 +343,58 @@ events</span> take effect</li>
 </ul>
 
 <p>The player with the most culture points wins.</p>
-<script src="script.js"></script>
+<script>
+/* hide elements with klass */
+function hide_class(klass) {
+	var els = document.getElementsByClassName(klass);
+	for (var i = 0; i < els.length; ++i) {
+		els[i].style.display = "none";
+	}
+}
+
+/* remove rule classes from elements with klass */
+function unrule(klass) {
+	var els = document.getElementsByClassName(klass);
+	for (var i = els.length; i-- > 0;) {
+		els[i].classList.remove('rule');
+		els[i].classList.remove(klass);
+	}
+}
+
+/* functions for showing specific sets of rules. they all
+ * hide the different variant explanations
+ * hide rules from other variants
+ * remove the rule styles for the selected variant
+ */
+function show_simple() {
+	hide_class('exp');
+
+	unrule('simple');
+	hide_class('advanced');
+	hide_class('advanced-only');
+	hide_class('full');
+}
+
+function show_advanced() {
+	hide_class('exp');
+
+	hide_class('simple');
+	unrule('advanced');
+	unrule('advanced-only');
+	hide_class('full');
+}
+
+function show_full() {
+	hide_class('exp');
+
+	hide_class('simple');
+	unrule('advanced');
+	hide_class('advanced-only');
+	unrule('full');
+}
+
+// unhide script buttons
+document.getElementById('buttons').style.display = 'block';
+</script>
 	</body>
 </html>
