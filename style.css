@@ -1,0 +1,63 @@
+h3 {
+	margin-top: 5px;
+}
+
+.event {
+	text-transform: capitalize;
+	font-variant: small-caps;
+}
+
+.card {
+	font-weight: bold;
+}
+
+.deck {
+	font-style: italic;
+}
+
+.bad {
+	text-transform: uppercase;
+}
+
+.rule {
+	margin: 2px;
+	padding: 0 4px;
+	border-radius: 5px;
+}
+.rule:before, .rule h3:before {
+	padding: 0 5px;
+}
+section.rule:before {
+	content: none;
+}
+
+.full {
+	border: 2px solid red;
+}
+.full:before, .full h3:before {
+	content: "∞";
+	font-size: 16pt;
+}
+
+.advanced {
+	border: 1px dotted purple;
+}
+.advanced:before, .advanced h3:before {
+	content: "∗";
+	font-size: 14pt;
+}
+
+.advanced-only {
+	border: 2px solid blue;
+}
+.advanced-only:before {
+	content: "⊛";
+	font-size: 16pt;
+}
+
+.simple {
+	border: 2px solid green;
+}
+.simple:before, .simple h3:before {
+	content: "♥";
+}
