@@ -16,6 +16,13 @@ h3 {
 	margin-top: 5px;
 }
 
+@media print {
+	a {
+		text-decoration: none;
+		color: black;
+	}
+}
+
 /* script buttons start hidden */
 #buttons {
 	display: none;
@@ -396,6 +403,14 @@ function show_full() {
 
 // unhide script buttons
 document.getElementById('buttons').style.display = 'block';
+
+// when printing, hide the buttons
+window.matchMedia("print").onchange = function(e) {
+	var disp = 'block';
+	if (e.matches)
+		disp = 'none';
+	document.getElementById('buttons').style.display = disp;
+};
 </script>
 	</body>
 </html>
